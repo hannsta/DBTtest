@@ -3,4 +3,4 @@
 
 select *
 from {{ ref('my_first_dbt_model') }}
-where PERMIT_TYPE='REPAIR'
+where PERMIT_TYPE IN ('REPAIR','ELECTRICAL')
