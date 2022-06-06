@@ -10,6 +10,14 @@ models:
             tests:
                 - unique
                 - not_null
+    - name: location
+      description: "A starter dbt model"
+      columns:
+          - name: LOCATION
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
     - name: permits
       description: "A starter dbt model"
       columns:
@@ -25,3 +33,10 @@ models:
                 - relationships:
                     to: ref('applicant')
                     field: APPLICANT
+          - name: LOCATION
+            description: "The primary key for this table"
+            tests:
+                - not_null
+                - relationships:
+                    to: ref('location')
+                    field: LOCATION
