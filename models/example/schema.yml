@@ -40,3 +40,13 @@ models:
                 - relationships:
                     to: ref('location')
                     field: LOCATION
+    - name: applications
+      description: "A starter dbt model"
+      columns:
+          - name: APPLICANT
+            description: "The primary key for this table"
+            tests:
+                - not_null
+                - relationships:
+                    to: ref('applicant')
+                    field: APPLICANT
